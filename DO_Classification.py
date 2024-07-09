@@ -169,7 +169,7 @@ for i1 in range(0,len(file_list),1):
 
         cv2.imwrite(pathResult, imgResult)
         iPlotX = iPlotX + 1
-        if iPlotX == 10:
+        if iPlotX == xMax:
             iPlotX = 0
             iPlotY = iPlotY + 1
 
