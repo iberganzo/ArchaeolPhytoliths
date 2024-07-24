@@ -60,7 +60,7 @@ def num_sort(test_string):
 path=os.path.abspath(os.getcwd())
 pathDataImg=os.path.join(path,'DataToClassify')
 for filenameR in glob.glob("DataToClassify/.*"):
-        os.remove(filenameR)
+        os.rmdir(filenameR)
 
 file_list=os.listdir(pathDataImg)
 file_list=sorted(file_list)
