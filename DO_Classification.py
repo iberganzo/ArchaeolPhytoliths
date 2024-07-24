@@ -61,7 +61,7 @@ path=os.path.abspath(os.getcwd())
 pathDataImg=os.path.join(path,'DataToClassify')
 for filenameR in glob.glob("DataToClassify/.*"):
 	if os.path.isdir(filenameR):
-        	os.rmdir(filenameR)
+		os.rmdir(filenameR)
 	else:
 		os.remove(filenameR)
 
@@ -119,10 +119,10 @@ for i1 in range(0,len(file_list),1):
 
     pathDataPred=os.path.join(path,'Divided/')
     for filenameR in glob.glob("Divided/.*"):
-        if os.path.isdir(filenameR):
-        	os.rmdir(filenameR)
-	else:
-		os.remove(filenameR)
+	    if os.path.isdir(filenameR):
+		    os.rmdir(filenameR)
+	    else:
+		    os.remove(filenameR)
     file_listPred=os.listdir(pathDataPred)
     #file_listPred=sorted(file_listPred)
     file_listPred.sort(key=num_sort) 
