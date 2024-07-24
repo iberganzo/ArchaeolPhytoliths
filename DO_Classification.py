@@ -60,7 +60,10 @@ def num_sort(test_string):
 path=os.path.abspath(os.getcwd())
 pathDataImg=os.path.join(path,'DataToClassify')
 for filenameR in glob.glob("DataToClassify/.*"):
-        os.rmdir(filenameR)
+	if os.path.isdir(filenameR):
+        	os.rmdir(filenameR)
+	else:
+		os.remove(filenameR)
 
 file_list=os.listdir(pathDataImg)
 file_list=sorted(file_list)
@@ -116,7 +119,10 @@ for i1 in range(0,len(file_list),1):
 
     pathDataPred=os.path.join(path,'Divided/')
     for filenameR in glob.glob("Divided/.*"):
-        os.remove(filenameR)
+        if os.path.isdir(filenameR):
+        	os.rmdir(filenameR)
+	else:
+		os.remove(filenameR)
     file_listPred=os.listdir(pathDataPred)
     #file_listPred=sorted(file_listPred)
     file_listPred.sort(key=num_sort) 
